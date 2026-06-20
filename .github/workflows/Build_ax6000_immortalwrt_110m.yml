@@ -57,7 +57,7 @@ jobs:
         echo "=============================================================================="
 
     - name: Checkout repository
-      uses: actions/checkout@v6        
+      uses: actions/checkout@v7        
 
     # 如果“Initialization environment”报错，是因为官方 APT 设置依赖项的脚本已经不合时宜，在官方修正之前，请使用下方的代码
     - name: Initialization environment
