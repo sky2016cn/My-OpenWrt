@@ -110,11 +110,12 @@ jobs:
         # 编译 passwall_luci，去掉下面注释，此命令会在 feeds.conf.default文件，第 1 行插入 passwall_luci
         #sed -i '1i src-git passwall_luci https://github.com/Openwrt-Passwall/openwrt-passwall.git;main' ./feeds.conf.default
 
-        # 编译 passwall2_luci，不要和 passwall_luci 一起编译，编译出来的固件会不稳定，第 1 行插入 passwall2_luci
-        #sed -i '1i src-git passwall2_luci https://github.com/Openwrt-Passwall/openwrt-passwall2.git;main' ./feeds.conf.default
-
         # 编译 passwall_packages，再次在 feeds.conf.default文件，第 1 行插入 passwall_packages (这样 packages 就变成了第 1 行，luci 变成了第 2 行)
         #sed -i '1i src-git passwall_packages https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git;main' ./feeds.conf.default
+        
+        # ======== 编译 passwall2 最新版 =========
+        # 编译 passwall2_luci，不要和 passwall_luci 一起编译，编译出来的固件会不稳定，第 1 行插入 passwall2_luci
+        #sed -i '1i src-git passwall2_luci https://github.com/Openwrt-Passwall/openwrt-passwall2.git;main' ./feeds.conf.default
         
     - name: Update feeds
       working-directory: ./immortalwrt
