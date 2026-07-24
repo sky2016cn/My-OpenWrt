@@ -118,7 +118,7 @@ jobs:
         ./scripts/feeds install -a
 
        # ======== 编译 OpenClash 最新版（使用 package 编译法）推荐 =========
-       # OpenClash 不推荐使用上方写入 ./feeds.conf.default 编译法
+       # OpenClash 推荐使用上方写入 ./feeds.conf.default 编译法
        # Lede插件库已经包含 OpenClash，若源码被删除或编译 OpenClash 最新版，使用以下命令自行编译，打开Lede官方插件库查询：https://github.com/coolsnowwolf/lede/blob/master/feeds.conf.default（注意 luci后面的分支，打开 luci仓库中正确的分支找到“applications”查询插件）       
     #- name: Import Official Recommended OpenClash
     #  working-directory: /builder/openwrt
