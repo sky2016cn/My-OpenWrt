@@ -88,6 +88,10 @@ jobs:
         
         # ======== 编译下方插件，请先去掉注释 ======== 
         #cd /builder/immortalwrt
+
+        # ======== 编译 OpenClash 最新版 =========
+        # immortalwrt 插件库已经包含 OpenClash，若源码被删除或编译 OpenClash 最新版，使用以下命令自行编译，打开 immortalwrt官方插件库查询：https://github.com/immortalwrt/immortalwrt（选择 openwrt-24.10分支，打开 feeds.conf.default文件，再打开luci仓库找到“applications”查询插件）
+        #sed -i '1i src-git openclash https://github.com/vernesong/OpenClash.git;master' ./feeds.conf.default
         
         # ======== 编译 passwall 最新版 =========
         # immortalwrt插件库已经包含 passwall，若源码被删除或编译 Passwall 最新版，使用以下命令自行编译，打开 immortalwrt官方插件库查询：https://github.com/immortalwrt/immortalwrt（选择 openwrt-24.10分支，打开 feeds.conf.default文件，再打开luci仓库找到“applications”查询插件）
@@ -117,7 +121,7 @@ jobs:
         ./scripts/feeds install -a
 
        # ======== 编译 OpenClash 最新版（使用 package 编译法）推荐 =========
-       # OpenClash 不推荐使用上方写入 ./feeds.conf.default 编译法
+       # OpenClash 推荐使用上方写入 ./feeds.conf.default 编译法
        # Lede插件库已经包含 OpenClash，若源码被删除或编译 OpenClash 最新版，使用以下命令自行编译，打开Lede官方插件库查询：https://github.com/coolsnowwolf/lede/blob/master/feeds.conf.default（注意 luci后面的分支，打开 luci仓库中正确的分支找到“applications”查询插件）       
     #- name: Import Official Recommended OpenClash
     #  working-directory: /builder/immortalwrt
